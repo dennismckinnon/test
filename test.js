@@ -1,7 +1,6 @@
 var readline = require('readline');
 var fs = require('fs-extra');
 var erisC = require('eris-contracts');
-var crypto = require("crypto");
 
 var restify = require('restify');
 var http = require("http");
@@ -10,6 +9,7 @@ var url = require("url");
 
 // All that needs doing atm.
 var erisdbURL = "http://localhost:1337/rpc";
+//This is for simplicity sake. In real dapps you would NOT hardcode the private key in the javascript
 var PrivKey = "6B72D45EB65F619F11CE580C8CAED9E0BADC774E9C9C334687A65DCBAD2C4151CB3688B7561D488A2A4834E1AEE9398BEF94844D8BDBBCA980C11E3654A45906";
 var contracts = erisC.solidityContractsDev(erisdbURL, PrivKey);
 
@@ -33,7 +33,6 @@ function main(){
         // If this file exists, we've already deployed it. (Use NAMEREG later)
         var contractCfg = fs.readJsonSync("./contracts/test.cfg");
         contract = contractFactory.at(contractCfg.address);
-//        contract.setOutputFormatter(erisC.outputFormatters.jsonStrings)
         server();
     } catch (error) {
         // Otherwise deploy and save.
@@ -47,7 +46,6 @@ function main(){
             fs.writeJsonSync("./contracts/test.cfg", {name: 'test', address: _contract.address});
             console.log("Deployed contract at: " + _contract.address);
             contract = _contract;
-//            contract.setOutputFormatter(erisC.outputFormatters.jsonStrings)
             server();
         });
     }
