@@ -1,0 +1,1 @@
+[{"constant":true,"inputs":[],"name":"get","outputs":[{"name":"ret","type":"string"}],"type":"function"},{"inputs":[],"type":"constructor"}]

@@ -1,0 +1,24 @@
+{
+  "name": "test",
+  "version": "1.0.0",
+  "description": "A test dapp set up",
+  "main": "test.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "github.com/dennismckinnon/test"
+  },
+  "keywords": [
+    "dapps"
+  ],
+  "author": "Dennis Mckinnon",
+  "license": "ISC",
+  "dependencies": {
+    "eris-contracts": "^0.10.14",
+    "eris-db": "^0.11.0",
+    "fs-extra": "^0.22.1",
+    "restify": "^3.0.3"
+  }
+}
